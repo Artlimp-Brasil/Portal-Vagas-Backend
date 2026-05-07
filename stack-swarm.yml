@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  api_vagas_backend:
+    image: artlimp/api-vagas-backend:1.0
+
+    networks:
+      - intradocker
+
+    env_file:
+      - .env
+
+    deploy:
+      replicas: 1
+
+      restart_policy:
+        condition: on-failure
+
+      update_config:
+        order: start-first
+        parallelism: 1
+
+      placement:
+        constraints:
+          - node.role == manager
+
+networks:
+  intradocker:
+    external: true
