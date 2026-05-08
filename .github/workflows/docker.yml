@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: artlimp/api-vagas-backend:1.0
+          tags: artlimp/api-vagas-backend:1.1
