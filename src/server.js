@@ -8,7 +8,7 @@ import applicationsRoutes from "./routes/applications.routes.js";
 const app = express();
 
 app.use(cors({
-  origin: env.frontendUrl,
+  origin: env.frontendUrl.split(","),
 }));
 
 app.use(fileUpload());
